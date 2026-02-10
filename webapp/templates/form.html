@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Entry</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>User Details</h1>
+
+      <form method="post">
+        <div class="grid">
+          <div>
+            <label>Full Name</label>
+            <input name="name" required placeholder="Full name">
+          </div>
+          <div>
+            <label>Contact Number</label>
+            <input name="contact" required placeholder="+977-98xxxxxxx">
+          </div>
+
+          <div>
+            <label>Address</label>
+            <input name="address" required placeholder="Current address">
+          </div>
+          <div>
+            <label>Mailing Address</label>
+            <input name="email" placeholder="Mailing address (if different)">
+          </div>
+
+          <div>
+            <label>ID Card Type</label>
+            <select name="id_card_type" required>
+              <option value="">Select one</option>
+              <option>Citizenship</option>
+              <option>Voter Card</option>
+              <option>Driving License</option>
+              <option>PAN Card</option>
+              <option>Passport</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <label>
+              <input type="checkbox" id="getLocation"> Get current location
+            </label>
+            <span class="badge">Consent required</span>
+          </div>
+
+          <div>
+            <label>Latitude</label>
+            <input name="latitude" id="lat" readonly placeholder="Auto">
+          </div>
+          <div>
+            <label>Longitude</label>
+            <input name="longitude" id="lng" readonly placeholder="Auto">
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:12px">
+          <button class="btn primary" type="submit">Save</button>
+          <a class="link" href="/list">View Saved Data</a>
+        </div>
+        <div><a href="/main">MAP</a><a href="/index">Index</a>
+        </div>
+        <li><a href="/map">Google Map</a></li>
+      </form>
+
+      <div class="footer">Location will be captured only if you allow it.</div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
