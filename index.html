@@ -29,11 +29,11 @@ function initMap() {
     });
 
     directionsService = new google.maps.DirectionsService();
-    directionsRenderer = new google.maps.DirectionsRenderer({ suppressMarkers: true });
+    directionsRenderer = new google.maps.DirectionsRenderer({ suppressMarkers: true,polylineOptions: { strokeWeight: 5 }});
     directionsRenderer.setMap(map);
 
     trackLocation();
-    setInterval(trackLocation, 5000); // update every 5 seconds
+    setInterval(trackLocation, 100); // update every 5 seconds
 }
 
 function trackLocation() {
